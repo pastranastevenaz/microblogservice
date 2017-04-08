@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+  {% block content %}
+      <h3>Hello, {{user.nickname}}</h3>
+      <h4>Favorite activities</h4>
+      <p><b>Sport: </b>{{hobbies.sport}}</p>
+      <p><b>Activity: </b>{% if hobbies.activity %}
+                              {{hobbies.activity}}
+                              {% else %}
+                              No activity found
+                              {% endif %}</p>
+
+      <hr>
+      <h2>Blog Posts</h2>
+      {% for post in posts %}
+
+      <div><p><b>{{ post.author.nickname }} says: </b>{{ post.body }}</p></div>
+      {% endfor %}
+  {% endblock %}
